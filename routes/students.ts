@@ -1,24 +1,16 @@
 import express, { type Express, type Request, type Response } from "express";
+import {
+  getUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../controllers/students.ts";
+
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  console.log("Get Request Received on /students");
-  res.send("Hello, this is a GET request on /students!");
-});
-
-router.post("/", (req: Request, res: Response) => {
-  console.log("Post Request Received on /students");
-  res.send("Hello, this is a POST request on /students!");
-});
-
-router.put("/", (req: Request, res: Response) => {
-  console.log("Put Request Received on /students");
-  res.send("Hello, this is a PUT request on /students!");
-});
-
-router.delete("/", (req: Request, res: Response) => {
-  console.log("Delete Request Received on /students");
-  res.send("Hello, this is a DELETE request on /students!");
-});
+router.get("/", getUsers);
+router.post("/", createUser);
+router.put("/", updateUser);
+router.delete("/", deleteUser);
 
 export default router;
