@@ -11,3 +11,6 @@ app.get("/product", (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+// Query parameters are optional values added to the URL after ?. They are commonly used to send filtering, searching, sorting, or other additional information to the server.
+// Used to get the data from the client to the server.
